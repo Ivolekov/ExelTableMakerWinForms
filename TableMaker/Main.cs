@@ -66,14 +66,14 @@ namespace TableMaker
                 MessageBox.Show("Choose full path to excel file!", "ERROR!!!", MessageBoxButtons.OK);
                 return; ;
             }
-            var isVisiable = cbVisible.Checked;
+            var isVisible = cbVisible.Checked;
             string filefullPathToCobfigFile = Environment.CurrentDirectory + @"\" + "Config.xml";
             string fileFullPathToExcelFile = tbPathFile.Text;
             XmlTextWriter writer = null;
             TableOperations.TableOperations tableOperations = new TableOperations.TableOperations();
 
             rtbLogs.Text += "Open Excel..." + Environment.NewLine;
-            Application clsExcel = new Application { Visible = isVisiable };
+            Application clsExcel = new Application { Visible = isVisible };
             string pathForDataMatrixCodeImg = Environment.CurrentDirectory;
             Workbooks workbooks = clsExcel.Workbooks;
             rtbLogs.Text += "Open Template..." + Environment.NewLine;
@@ -128,7 +128,7 @@ namespace TableMaker
                 range = clsWorksheet.get_Range("A1", $"G{rowsRange}");
                 tableOperations.AddBorders(clsWorksheet, range);
                 progressBar.Increment(10);
-                if (!isVisiable)
+                if (!isVisible)
                 {
                     rtbLogs.Text += "Saving..." + Environment.NewLine;
                     
@@ -148,7 +148,7 @@ namespace TableMaker
             }
             finally
             {
-                if (!isVisiable)
+                if (!isVisible)
                 {
                     clsWorkbook.Save();
                     Marshal.FinalReleaseComObject(clsWorksheet);
