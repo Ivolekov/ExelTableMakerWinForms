@@ -33,7 +33,7 @@
             this.logo = new System.Diagnostics.Process();
             this.startButton = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.cbVisiable = new System.Windows.Forms.CheckBox();
+            this.cbVisible = new System.Windows.Forms.CheckBox();
             this.rtbLogs = new System.Windows.Forms.RichTextBox();
             this.tbPathFile = new System.Windows.Forms.TextBox();
             this.lblPathFile = new System.Windows.Forms.Label();
@@ -79,16 +79,17 @@
             this.progressBar.Size = new System.Drawing.Size(330, 35);
             this.progressBar.TabIndex = 2;
             // 
-            // cbVisiable
+            // cbVisible
             // 
-            this.cbVisiable.AutoSize = true;
-            this.cbVisiable.Location = new System.Drawing.Point(426, 58);
-            this.cbVisiable.Name = "cbVisiable";
-            this.cbVisiable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cbVisiable.Size = new System.Drawing.Size(79, 21);
-            this.cbVisiable.TabIndex = 3;
-            this.cbVisiable.Text = "Visiable";
-            this.cbVisiable.UseVisualStyleBackColor = true;
+            this.cbVisible.AutoSize = true;
+            this.cbVisible.Location = new System.Drawing.Point(426, 58);
+            this.cbVisible.Name = "cbVisible";
+            this.cbVisible.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cbVisible.Size = new System.Drawing.Size(71, 21);
+            this.cbVisible.TabIndex = 3;
+            this.cbVisible.Text = "Visible";
+            this.cbVisible.UseVisualStyleBackColor = true;
+            this.cbVisible.CheckedChanged += new System.EventHandler(this.cbVisible_CheckedChanged);
             // 
             // rtbLogs
             // 
@@ -141,7 +142,7 @@
             this.Controls.Add(this.lblPathFile);
             this.Controls.Add(this.tbPathFile);
             this.Controls.Add(this.rtbLogs);
-            this.Controls.Add(this.cbVisiable);
+            this.Controls.Add(this.cbVisible);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.logoImg);
@@ -165,7 +166,7 @@
         private System.Diagnostics.Process logo;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.CheckBox cbVisiable;
+        private System.Windows.Forms.CheckBox cbVisible;
         private System.Windows.Forms.Label lblPathFile;
         private System.Windows.Forms.TextBox tbPathFile;
         private System.Windows.Forms.RichTextBox rtbLogs;

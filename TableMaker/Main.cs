@@ -66,7 +66,7 @@ namespace TableMaker
                 MessageBox.Show("Choose full path to excel file!", "ERROR!!!", MessageBoxButtons.OK);
                 return; ;
             }
-            var isVisiable = cbVisiable.Checked;
+            var isVisiable = cbVisible.Checked;
             string filefullPathToCobfigFile = Environment.CurrentDirectory + @"\" + "Config.xml";
             string fileFullPathToExcelFile = tbPathFile.Text;
             XmlTextWriter writer = null;
@@ -187,6 +187,11 @@ namespace TableMaker
             }
 
 
+
+        }
+
+        private void cbVisible_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
